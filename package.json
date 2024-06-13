@@ -3,7 +3,7 @@
     "version": "6.6.0",
     "summary": "A react native PDF view component",
     "description": "A react native PDF view component, support ios and android platform",
-    "main": "dist/index.js",
+    "main": "index.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/wonday/react-native-pdf.git"
