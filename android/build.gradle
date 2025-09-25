@@ -2,17 +2,17 @@ description = 'react-native-pdf'
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:8.13.0'
     }
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 apply plugin: 'com.android.library'
@@ -20,12 +20,13 @@ apply plugin: 'com.android.library'
 def _ext = rootProject.ext
 
 def _reactNativeVersion = _ext.has('reactNative') ? _ext.reactNative : '+'
-def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 27
-def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '27.0.3'
-def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 16
-def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 26
+def _compileSdkVersion = _ext.has('compileSdkVersion') ? _ext.compileSdkVersion : 35
+def _buildToolsVersion = _ext.has('buildToolsVersion') ? _ext.buildToolsVersion : '35.0.0'
+def _minSdkVersion = _ext.has('minSdkVersion') ? _ext.minSdkVersion : 24
+def _targetSdkVersion = _ext.has('targetSdkVersion') ? _ext.targetSdkVersion : 35
 
 android {
+    namespace "org.wonday.pdf"
     compileSdkVersion _compileSdkVersion
     buildToolsVersion _buildToolsVersion
 
@@ -49,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation "com.facebook.react:react-native:${_reactNativeVersion}"
-    implementation 'com.github.barteksc:android-pdf-viewer:3.1.0-beta.1'
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.zacharee:AndroidPdfViewer:4.0.1'
+    implementation 'io.legere:pdfiumandroid:1.0.33'
+    implementation 'com.google.code.gson:gson:2.13.2'
 }
