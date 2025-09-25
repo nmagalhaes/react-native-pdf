@@ -12,7 +12,11 @@ buildscript {
 }
 
 repositories {
-    mavenCentral()
+    mavenCentral()  // Replace jcenter() with this
+   google()  // Add this line
+  flatDir {
+        dirs '../../../android/app/libs'
+         }
 }
 
 apply plugin: 'com.android.library'
@@ -50,7 +54,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.zacharee:AndroidPdfViewer:4.0.1'
+    implementation "com.facebook.react:react-native:${_reactNativeVersion}"
+    implementation(name: 'android-pdf-viewer-3.1.0-beta.1', ext: 'aar')
     implementation 'io.legere:pdfiumandroid:1.0.33'
     implementation 'com.google.code.gson:gson:2.13.2'
 }
